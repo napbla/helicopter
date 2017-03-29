@@ -1,0 +1,8 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TForm1','FORMDATA',[
+  'TPF0'#6'TForm1'#5'Form1'#4'Left'#3'v'#3#6'Height'#3#224#1#3'Top'#3#164#0#5'W'
+  +'idth'#3#128#2#10'AlphaBlend'#9#7'Caption'#6#2'MB'#11'OnMouseDown'#7#13'Form'
+  +'MouseDown'#12'OnMouseLeave'#7#14'FormMouseLeave'#7'OnPaint'#7#10'FormCreate'
+  +#10'LCLVersion'#6#6'0.9.30'#7'Visible'#9#0#0
+]);

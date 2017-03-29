@@ -1,0 +1,62 @@
+unit fighter2;
+
+{$mode objfpc}{$H+}
+
+interface
+
+uses
+  Classes, SysUtils, FileUtil, Forms, Controls, Graphics,
+  Buttons, ExtCtrls, StdCtrls, FPImage, intfGraphics, LCLType,LResources,Crt;
+
+
+var
+  bmFighter,bmBackground,bmBlack:TBitmap;
+  fighterposx,fighterposy,speed: integer;
+
+  procedure FormMouseDown(Sender: TObject);
+  procedure FormMouseLeave(Sender: TObject);
+
+
+
+
+
+
+
+
+implementation
+
+procedure FormMouseDown(Sender: TObject);
+begin
+ if fighterposy>0 then speed:=1 else speed:=0;
+end;
+
+procedure FormMouseLeave(Sender: TObject);
+begin
+ if fighterposy<640 then speed:=-2 else speed:=0;
+end;
+
+
+{initialization
+   {$I fighter.lrs}
+ }
+begin
+ bmFighter := TBitmap.create;
+ bmFighter.LoadFromFile('fighter.bmp');
+ bmBackground := TBitmap.create;
+ bmBackground.LoadFromFile('sky.bmp');
+ bmBlack := TBitmap.create;
+ bmBlack.LoadFromFile('black.bmp');
+ fighterposx := 20;
+ fighterposy := 240;
+ Canvas.Draw(0,0,bmBackground);
+ Canvas.Draw(fighterposx,fighterposy,bmFighter);
+ speed:=-2;
+   while (fighterposx < 640 ) and (fighterposx>0) do
+       begin
+         canvas.Draw(fighterposx,fighterposy,bmBlack);
+         fighterposx:=fighterposx-speed;
+         canvas.Draw(fighterposx,fighterposy,bmFighter);
+         delay(50);
+       end;
+end.
+
